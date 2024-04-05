@@ -681,7 +681,7 @@ const _email = 'jp';
 const _cpf = 'jp';
 const _data = 'jp';
 
-
+//ABI (Application Binary Interface) é uma interface que define como os métodos de um contrato sao chamados.
 const encoded = myContract.methods.mint(_to,_uri,_nomeTitular,_email,_cpf,_data).encodeABI();
 console.log('Encoded:', encoded);
 
@@ -694,7 +694,8 @@ var tx = {
     gas: gasEstimate, 
     to: '0x7e330f2ae55fd4ada166281243c690a2ec8a30bf',
     data: encoded,
-    from: publickey, 
+    from: publickey,
+	//1 Gwei
     gasPrice: '0x3B9ACA00' 
 }
 
@@ -707,5 +708,4 @@ web3.eth.accounts.signTransaction(tx, privateKey).then(signed => {
 
 }
 
-mint();
-getNFT();
+
